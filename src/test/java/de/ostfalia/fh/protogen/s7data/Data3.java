@@ -18,7 +18,7 @@ public class Data3 {
 	}
 
 	public static B g(B b) {
-		if (b.z % 2 == 0 && b.n == 0) {
+		if (b.z % 2 == 0 && b.n % 2 == 0) {
 			b.z /= 2;
 			b.n /= 2;
 		}
