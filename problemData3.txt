@@ -1,0 +1,176 @@
+MAINCLASS 11-383:
+class Data3 {
+	public static void main(String[] args) {
+		B b1 = new B();
+		B b2 = new B();
+		b1.z = 9;
+		b1.n = 4;
+		b2.z = 6;
+		b2.n = 4;
+		f(b1);
+		f(b2);
+		b1 = g(b2);
+	}
+
+	public static void f(B b) {
+		b.b = b.z / b.n;
+	}
+
+	public static B g(B b) {
+		if (b.z % 2 == 0 && b.n == 0) {
+			b.z /= 2;
+			b.n /= 2;
+		}
+		return b;
+
+	}
+}
+
+class B 
+MATCH 191-196:;
+	}
+MATCH 247-252:;
+	}
+MATCH 343-349:;
+		}
+MATCH 361-368:;
+
+	}
+MATCH 416-420:;
+}
+
+
+public class Data3 { static int ghost=0; 
+	public static void main(String[] args) {
+		B b1 = new B();
+		B b2 = new B();
+		b1.z = 9;
+		b1.n = 4;
+		b2.z = 6;
+		b2.n = 4;
+		f(b1);
+		f(b2);
+		b1 = g(b2); Data3.ghost++; 
+	}
+
+	public static void f(B b) {
+		b.b = b.z / b.n; Data3.ghost++; 
+	}
+
+	public static B g(B b) {
+		if ((b.z % 2 == 0 && b.n == 0)&(Data3.ghost++>=0)) {
+			b.z /= 2;
+			b.n /= 2; Data3.ghost++; 
+		}
+		return b; 
+
+	}
+}
+
+class B {
+	float z;
+	float n;
+	float b;
+}
+
+Mär 16, 2018 5:48:31 PM de.ostfalia.fh.protogen.build.Trace runTrace
+INFORMATION: Start trace for class Data3
+[com.sun.jdi.CommandLineLaunch (defaults: home=C:\Program Files\Java\jdk1.8.0_121\jre, options=, main=, suspend=true, quote=", vmexec=java), com.sun.jdi.RawCommandLineLaunch (defaults: command=, quote=", address=)]
+Connector Description: 
+Launches target using Sun Java VM command line and attaches to it
+Mär 16, 2018 5:48:31 PM de.ostfalia.fh.protogen.build.Trace runTrace
+INFORMATION: Virtual machine's class path = [./out/]
+Breakpoint <clinit>@3
+skipped static init
+FieldWatch <clinit>@3
+skipped static init
+Breakpoint main@5
+skipped     =?    =?    =?    =?    =?    =?    =?    =?    =? |  3|      =     =     =     =     =     =     =     =
+Breakpoint main@6
+appending  z=0.0 n=0.0 b=0.0    =?    =?    =?    =?    =?    =? |  5| b1=3x0     =     =     =     =     =     =     =
+Breakpoint main@7
+appending  z=0.0 n=0.0 b=0.0 n=0.0 b=0.0    =?    =?    =?    =? |  6| b1=3x0b2=3x2     =     =     =     =     =     =
+Breakpoint main@8
+appending  z=9.0 n=0.0 b=0.0 n=0.0 b=0.0    =?    =?    =?    =? |  7| b1=3x0b2=3x2     =     =     =     =     =     =
+Breakpoint main@9
+appending  z=9.0 n=4.0 b=0.0 n=0.0 b=0.0    =?    =?    =?    =? |  8| b1=3x0b2=3x2     =     =     =     =     =     =
+Breakpoint main@10
+appending  z=9.0 n=4.0 b=0.0 n=0.0 b=0.0    =?    =?    =?    =? |  9| b1=3x0b2=3x2     =     =     =     =     =     =
+Breakpoint main@11
+appending  z=9.0 n=4.0 b=0.0 n=4.0 b=0.0    =?    =?    =?    =? | 10| b1=3x0b2=3x2     =     =     =     =     =     =
+MethodEntry main@11
+appending  z=9.0 n=4.0 b=0.0 n=4.0 b=0.0    =?    =?    =?    =? | 11| b1=3x0b2=3x2 b=3x0     =     =     =     =     =
+Breakpoint main@11
+appending  z=9.0 n=4.0 b=0.0 n=4.0 b=0.0    =?    =?    =?    =? | 17| b1=3x0b2=3x2 b=3x0     =     =     =     =     =
+FieldWatch main@11
+replace last  z=9.0 n=4.0b=2.25 n=4.0 b=0.0    =?    =?    =?    =? | 17| b1=3x0b2=3x2 b=3x0     =     =     =     =     =
+MethodExit main@11
+replace last  z=9.0 n=4.0b=2.25 n=4.0 b=0.0    =?    =?    =?    =? | 17| b1=3x0b2=3x2 b=3x0     =     =     =     =     =
+Breakpoint main@12
+appending  z=9.0 n=4.0b=2.25 n=4.0 b=0.0    =?    =?    =?    =? | 11| b1=3x0b2=3x2     =     =     =     =     =     =
+MethodEntry main@12
+appending  z=9.0 n=4.0b=2.25 n=4.0 b=0.0    =?    =?    =?    =? | 12| b1=3x0b2=3x2 b=3x2     =     =     =     =     =
+Breakpoint main@12
+appending  z=9.0 n=4.0b=2.25 n=4.0 b=0.0    =?    =?    =?    =? | 17| b1=3x0b2=3x2 b=3x2     =     =     =     =     =
+FieldWatch main@12
+replace last  z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 17| b1=3x0b2=3x2 b=3x2     =     =     =     =     =
+MethodExit main@12
+replace last  z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 17| b1=3x0b2=3x2 b=3x2     =     =     =     =     =
+Breakpoint main@13
+appending  z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 12| b1=3x0b2=3x2     =     =     =     =     =     =
+MethodEntry main@13
+appending  z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 13| b1=3x0b2=3x2 ret=? b=3x2     =     =     =     =
+Breakpoint main@13
+appending  z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 21| b1=3x0b2=3x2 ret=? b=3x2     =     =     =     =
+FieldWatch main@13
+replace last  z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 21| b1=3x0b2=3x2 ret=? b=3x2     =     =     =     =
+Breakpoint main@13
+replace last  z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 21| b1=3x0b2=3x2 ret=? b=3x2     =     =     =     =
+MethodExit main@13
+appending  z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 25| b1=3x0b2=3x2ret=instance of B(id=96) b=3x2     =     =     =     =
+FieldWatch main@13
+appending  z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 13| b1=3x2b2=3x2     =     =     =     =     =     =
+ende
+Mär 16, 2018 5:48:33 PM de.ostfalia.fh.protogen.build.ProtocolGenerator saveTableToFile
+INFORMATION: Saving Table...
+Mär 16, 2018 5:48:33 PM de.ostfalia.fh.protogen.build.ProtocolGenerator saveTableToFile
+INFORMATION: trace saved to file: C:\Users\domin\workspace\JavaMemoryTracerAufgaben\.\out\Data3.traced
+auto-generated memory trace:
+ z=0.0 n=0.0 b=0.0    =?    =?    =?    =?    =?    =? |  5| b1=3x0     =     =     =     =     =     =     =
+ z=0.0 n=0.0 b=0.0 n=0.0 b=0.0    =?    =?    =?    =? |  6| b1=3x0b2=3x2     =     =     =     =     =     =
+ z=9.0 n=0.0 b=0.0 n=0.0 b=0.0    =?    =?    =?    =? |  7| b1=3x0b2=3x2     =     =     =     =     =     =
+ z=9.0 n=4.0 b=0.0 n=0.0 b=0.0    =?    =?    =?    =? |  8| b1=3x0b2=3x2     =     =     =     =     =     =
+ z=9.0 n=4.0 b=0.0 n=0.0 b=0.0    =?    =?    =?    =? |  9| b1=3x0b2=3x2     =     =     =     =     =     =
+ z=9.0 n=4.0 b=0.0 n=4.0 b=0.0    =?    =?    =?    =? | 10| b1=3x0b2=3x2     =     =     =     =     =     =
+ z=9.0 n=4.0 b=0.0 n=4.0 b=0.0    =?    =?    =?    =? | 11| b1=3x0b2=3x2 b=3x0     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 n=4.0 b=0.0    =?    =?    =?    =? | 17| b1=3x0b2=3x2 b=3x0     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 n=4.0 b=0.0    =?    =?    =?    =? | 11| b1=3x0b2=3x2     =     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 n=4.0 b=0.0    =?    =?    =?    =? | 12| b1=3x0b2=3x2 b=3x2     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 17| b1=3x0b2=3x2 b=3x2     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 12| b1=3x0b2=3x2     =     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 13| b1=3x0b2=3x2 ret=? b=3x2     =     =     =     =
+ z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 21| b1=3x0b2=3x2 ret=? b=3x2     =     =     =     =
+ z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 25| b1=3x0b2=3x2ret=instance of B(id=96) b=3x2     =     =     =     =
+ z=9.0 n=4.0b=2.25 n=4.0 b=1.5    =?    =?    =?    =? | 13| b1=3x2b2=3x2     =     =     =     =     =     =
+
+reference memory trace:
+   z=0   n=0   b=0    =?    =?    =?    =?    =?    =? |  5| b1=3x0     =     =     =     =     =     =     =
+   z=0   n=0   b=0   z=0   n=0   b=0    =?    =?    =? |  6| b1=3x0b2=3x3     =     =     =     =     =     =
+ z=9.0   n=0   b=0   z=0   n=0   b=0    =?    =?    =? |  7| b1=3x0b2=3x3     =     =     =     =     =     =
+ z=9.0 n=4.0   b=0   z=0   n=0   b=0    =?    =?    =? |  8| b1=3x0b2=3x3     =     =     =     =     =     =
+ z=9.0 n=4.0   b=0 z=6.0 n=4.0   b=0    =?    =?    =? |  9| b1=3x0b2=3x3     =     =     =     =     =     =
+ z=9.0 n=4.0   b=0 z=6.0 n=4.0   b=0    =?    =?    =? | 10| b1=3x0b2=3x3     =     =     =     =     =     =
+ z=9.0 n=4.0   b=0 z=6.0 n=4.0   b=0    =?    =?    =? | 11| b1=3x0b2=3x3 b=3x0     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 z=6.0 n=4.0   b=0    =?    =?    =? | 17| b1=3x0b2=3x3 b=3x0     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 z=6.0 n=4.0   b=0    =?    =?    =? | 11| b1=3x0b2=3x3     =     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 z=6.0 n=4.0   b=0    =?    =?    =? | 12| b1=3x0b2=3x3 b=3x3     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 z=6.0 n=4.0 b=1.5    =?    =?    =? | 17| b1=3x0b2=3x3 b=3x3     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 z=6.0 n=4.0 b=1.5    =?    =?    =? | 12| b1=3x0b2=3x3     =     =     =     =     =     =
+ z=9.0 n=4.0b=2.25 z=6.0 n=4.0 b=1.5    =?    =?    =? | 13| b1=3x0b2=3x3 ret=? b=3x3     =     =     =     =
+ z=9.0 n=4.0b=2.25 z=6.0 n=4.0 b=1.5    =?    =?    =? | 21| b1=3x0b2=3x3 ret=? b=3x3     =     =     =     =
+ z=9.0 n=4.0b=2.25 z=3.0 n=4.0 b=1.5    =?    =?    =? | 22| b1=3x0b2=3x3 ret=? b=3x3     =     =     =     =
+ z=9.0 n=4.0b=2.25 z=3.0 n=2.0 b=1.5    =?    =?    =? | 23| b1=3x0b2=3x3 ret=? b=3x3     =     =     =     =
+ z=9.0 n=4.0b=2.25 z=3.0 n=2.0 b=1.5    =?    =?    =? | 25| b1=3x0b2=3x3ret=3x3 b=3x3     =     =     =     =
+ z=9.0 n=4.0b=2.25 z=3.0 n=2.0 b=1.5    =?    =?    =? | 13| b1=3x3b2=3x3     =     =     =     =     =     =
+
+compared 16 lines : [NUMBEROFSTEPS (S-1M-1V16), WRONGHEAPVAR (S1M0Vb), WRONGHEAPVAR (S2M0Vb), WRONGHEAPVAR (S3M0Vb), WRONGHEAPVAR (S4M0Vb), WRONGHEAPVAL (S4M2V0.0), WRONGHEAPVAL (S4M3V0.0), WRONGHEAPVAR (S5M0Vb), WRONGHEAPVAL (S5M2V0.0), WRONGHEAPVAR (S6M0Vb), WRONGHEAPVAL (S6M2V0.0), WRONGHEAPVAR (S7M0Vb), WRONGHEAPVAL (S7M2V2.25), WRONGHEAPVAR (S8M0Vb), WRONGHEAPVAL (S8M2V2.25), WRONGHEAPVAR (S9M0Vb), WRONGHEAPVAL (S9M2V2.25), WRONGHEAPVAR (S10M0Vb), WRONGHEAPVAL (S10M2V2.25), WRONGHEAPVAR (S11M0Vb), WRONGHEAPVAL (S11M2V2.25), WRONGHEAPVAR (S12M0Vb), WRONGHEAPVAL (S12M2V2.25), WRONGHEAPVAR (S13M0Vb), WRONGHEAPVAL (S13M2V2.25), LINENUMBER (S14M0V25), WRONGSTACKVAL (S14M2Vinstance of B(id=96)), WRONGHEAPVAR (S14M0Vb), WRONGHEAPVAL (S14M2V2.25), LINENUMBER (S15M0V13), MISSINGSTACK (S15M2V), WRONGSTACKVAL (S15M0V3x2), WRONGHEAPVAR (S15M0Vb), WRONGHEAPVAL (S15M2V2.25), WRONGHEAPVAL (S15M3V4.0)]
