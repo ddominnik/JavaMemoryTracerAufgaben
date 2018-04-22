@@ -20,10 +20,8 @@ class MethAttr_A {
 		b = this.c;
 		c = a * this.a + b;
 		this.c = 6 * this.b;
-		while (b > 0) {
-			this.b /= 2;
-			b = this.b - 1;
-			this.c = this.b;
-		}
+		this.b /= 2;
+		b = this.b - 1;
+		this.c = this.b;
 	}
 }
