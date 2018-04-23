@@ -12,6 +12,7 @@ class MethConstr42 {
 	int z, n;
 
 	public MethConstr42(int z, int n) {
+		super();
 		this.n = n;
 		if (z/n == 42) {
 			this.z = z;
