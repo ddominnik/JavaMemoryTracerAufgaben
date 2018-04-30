@@ -11,8 +11,7 @@ class MethAttr_A {
 	int a, b, c;
 
 	MethAttr_A() {
-		super();
-		this.a = this.b = this.c = 1;
+		super(); this.a = this.b = this.c = 1;
 	}
 
 	void f(int a, int b, int c) {

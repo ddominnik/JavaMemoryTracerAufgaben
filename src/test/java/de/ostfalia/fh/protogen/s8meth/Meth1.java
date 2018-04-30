@@ -13,8 +13,7 @@ class Meth1A {
 	int x, y;
 
 	Meth1A (int x, int y) {
-		super();
-		this.x = x; 
+		super(); this.x = x; 
 		this.y = y;
 	}
 	
