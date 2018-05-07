@@ -3,7 +3,7 @@ package test.java.de.ostfalia.fh.protogen.s8meth;
 import de.ostfalia.fh.protogen.TestBase2;
 import org.junit.Test;
 
-public class TestMethEquals extends TestBase2{
+public class TestMethEquals1 extends TestBase2{
 	String[][] stack = {
 			{"5","equalsVar=false"},
 			{"6","equalsVar=false","a0=2x0"},
@@ -46,6 +46,6 @@ public class TestMethEquals extends TestBase2{
 	
 	@Test
 	public void test () {
-		runTest("s8meth/", "MethEquals", stack, heap);
+		runTest("s8meth/", "MethEquals1", stack, heap);
 	}
 }
