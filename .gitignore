@@ -29,3 +29,6 @@ s4func/
 s6array/
 
 *.ini
+
+#ignore backup files
+*.bak
