@@ -9,7 +9,13 @@ import de.ostfalia.fh.protogen.grade.ProtocolGrader;
 
 public class TestBase2 {
 
+	// Added for backwards compatability
 	public void runTest(String subfolder, String classname, String[][] stacks, String[][] heaps) {
+		runTest(subfolder, classname, stacks, heaps, null);	
+		}
+
+	
+	public void runTest(String subfolder, String classname, String[][] stacks, String[][] heaps, String[][] stat) {
 		ProtocolGenerator.setFolders("./src/test/java/de/ostfalia/fh/protogen/" + subfolder, "./out/");
 
 //		ConversionTest.convertStringToJsonTest(stacks, heaps);
@@ -18,7 +24,7 @@ public class TestBase2 {
 		final IVarTable trace = ProtocolGenerator.compileAndRun(classname);
 		System.out.println("auto-generated memory trace:\n" + (trace));
 		
-		IVarTable truth = ProtocolGenerator.convert(stacks, heaps);
+		IVarTable truth = ProtocolGenerator.convert(stacks, heaps, stat);
 		System.out.println("reference memory trace:\n" + (truth));
 
 		//runTest(trace, stacks, heaps);
@@ -28,7 +34,7 @@ public class TestBase2 {
 		for (int r=0;r<stacks.length;++r) 
 			for (int c=1;c<stacks[r].length;++c) // skip line number
 				stacks[r][c]=stacks[r][c].split("=")[1]; 
-		IVarTable nonames = ProtocolGenerator.convert(stacks, heaps);
+		IVarTable nonames = ProtocolGenerator.convert(stacks, heaps, stat);
 		//System.out.println(Conversion.convertToJSON(stacks, heaps));
 		Assert.assertTrue(ProtocolGrader.grade(nonames,trace).size()==0);
 	}
