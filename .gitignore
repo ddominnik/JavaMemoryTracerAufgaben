@@ -29,3 +29,9 @@ s4func/
 s6array/
 
 *.ini
+
+# ignore IDEA and Mac specific files
+.classpath
+.DS_STORE
+.idea/*
+*.iml
