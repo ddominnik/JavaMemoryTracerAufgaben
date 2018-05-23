@@ -38,3 +38,4 @@ s6array/
 .idea/*
 *.iml
 .DS_Store
+/bin/
