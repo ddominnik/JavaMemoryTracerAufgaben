@@ -34,7 +34,6 @@ s6array/
 *.bak
 
 # ignore IDEA and Mac specific files
-.classpath
 .idea/*
 *.iml
 .DS_Store
