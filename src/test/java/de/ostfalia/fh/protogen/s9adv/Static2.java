@@ -1,27 +1,21 @@
 package test.java.de.ostfalia.fh.protogen.s9adv;
 
 public class Static2 {
-	static int stat = 0;
-	
-	public Static2(int i) {
-		super(); stat = i;
-	}
-	
-	int inc (int i) {
-		stat += i;
-		return stat;
-	}
+	static int i, j = 10;
 	
 	public static void main(String[] args) {
-		Static2 a = new Static2(0);
-		int x = a.inc(2);
-		Static2 aclone = a;
-		int y = a.inc(2);
-		Static2 a2 = new Static2(1);
-		int z = a2.inc(5);
-		if (a.stat != a2.stat) {
-			a.inc(1);
-			a2.inc(1);
+		int x = 3, y = 5;
+		int res1 = f(x);
+		int res2 = f(y);
+		if (res1 == res2) {
+			boolean eq = true;
 		}
+		
+	}
+	
+	static int f (int a) {
+		++i; j -= i;
+		a = a + j; 
+		return a;
 	}
 }
