@@ -6,17 +6,17 @@ import de.ostfalia.fh.protogen.TestBase2;
 public class TestStatic3 extends TestBase2 {
 
 	String[][] stack = { 
-			{"11","this=2x0","i=0"},
-			{"7","this=2x0","i=0"},
-			{"11","a=2x0"},
-			{"12","a=2x0","x=2"},
-			{"13","a=2x0","x=2","aclone=2x0"},
-			{"14","a=2x0","x=2","aclone=2x0","y=4"},
-			{"15","a=2x0","x=2","aclone=2x0","y=4","this=2x2","i=1"},
-			{"7","a=2x0","x=2","aclone=2x0","y=4","this=2x2","i=1"},
-			{"15","a=2x0","x=2","aclone=2x0","y=4","a2=2x2"},
-			{"16","a=2x0","x=2","aclone=2x0","y=4","a2=2x2","z=4"},
-			{"17","a=2x0","x=2","aclone=2x0","y=4","a2=2x2","z=4"}
+			{"11","this=0x0","i=0"},
+			{"7","this=0x0","i=0"},
+			{"11","a=0x0"},
+			{"12","a=0x0","x=2"},
+			{"13","a=0x0","x=2","aclone=0x0"},
+			{"14","a=0x0","x=2","aclone=0x0","y=4"},
+			{"15","a=0x0","x=2","aclone=0x0","y=4","this=0x0","i=1"},
+			{"7","a=0x0","x=2","aclone=0x0","y=4","this=0x0","i=1"},
+			{"15","a=0x0","x=2","aclone=0x0","y=4","a2=0x0"},
+			{"16","a=0x0","x=2","aclone=0x0","y=4","a2=0x0","z=4"},
+			{"17","a=0x0","x=2","aclone=0x0","y=4","a2=0x0","z=4"}
 	};
 
 	String[][] stat = { 
