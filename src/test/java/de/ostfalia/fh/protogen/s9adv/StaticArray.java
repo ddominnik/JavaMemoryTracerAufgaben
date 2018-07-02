@@ -9,9 +9,9 @@ public class StaticArray {
 		int[] b = { 8, 2, 1 };
 		for (int i = 0; i < b.length; i++) {
 			if (b[i] <= i && i % 2 == 0) {
-				a[i] = b[i] + i;
+				a[i % 2] = b[i] + i;
 				b[i] = i % 2;
-				a[i]++;
+				a[i % 2]++;
 			}
 		}
 		if (a[1] < a[0]) {
